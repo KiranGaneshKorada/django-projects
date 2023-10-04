@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<h3>delete student {{student.name}} ??</h3>
+<form  method="post">
+    {%csrf_token%}
+    <input type="submit" value="delete">
+</form>
+
+{% endblock %}
+
+
+   

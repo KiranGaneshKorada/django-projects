@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Project List</h1>
+
+    {% if project_list %}
+
+    {% for project in project_list %}
+
+    <div>
+        <h4>project name : {{project.name}}</h4><br>
+        <h4>project start date : {{project.startDate}}</h4><br>
+        <h4>project end date : {{project.endDate}}</h4><br>
+        <h4>Team lead : {{project.assignedTo}}</h4><br>
+        <h4>prioity number : {{project.priority}}</h4><hr>
+    </div>
+
+    {% endfor %}
+
+    {% else %}
+
+    <h3>sorry no projects , wanna add </h3>
+
+    {% endif %}
+
+    <a href="{% url 'modelFormsApp/addproject' %}">Add Project</a>
+
+</body>
+</html>

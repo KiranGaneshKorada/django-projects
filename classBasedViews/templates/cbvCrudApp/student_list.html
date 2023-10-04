@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block body %}
+{% load customFilters %}
+
+{% if student_list %} {% for student in student_list %}
+
+{% comment %} 
+go to django docs and search for template tags and filters to learn more
+    {% endcomment %}
+
+    <p>
+      id : {{student.id | myAppend:'21L31A05' }} || name : {{student.name | myUpper}} || age : {{student.age}} ||
+      marks : {{student.marks  | add:"2"}}
+      <a href="{% url 'studentDetail' student.id %}">details</a>
+      <a href="{% url 'studentUpdate' student.id %}">update</a>
+      <a href="{% url 'studentDelete' student.id %}">delete</a>
+    </p>
+    
+    <br />
+
+    {% endfor %} {% else %}
+
+    <p>no data</p>
+
+    {% endif %}
+    <a href="{% url 'studentCreateForm'%}">Add Student</a>
+
+{% endblock %}

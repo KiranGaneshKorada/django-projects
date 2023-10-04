@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>employee data</h1>
+    {%for emp in employes %}
+    <p>name = {{emp.firstName}} salary = {{emp.salary}} email = {{emp.email}}</p><hr>
+    {% endfor %} 
+    <hr>
+
+    <h1>programmers data</h1>
+    {%for prog in programmers %}
+    <p>name = {{prog.name}} salary = {{prog.sal}} </p><hr>
+    {% endfor %} 
+    <hr>
+
+    <h1>projects data</h1>
+    {%for proj in projects %}
+    <p>name = {{proj.name}} <br> programmers : {{proj.programmers}} </p><hr>
+    {% endfor %} 
+    <hr>
+    
+</body>
+</html>

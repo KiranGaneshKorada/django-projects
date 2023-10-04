@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if students_data %}
+
+    {% for student in students_data %}
+
+    <p>id : {{student.id}} || name : {{student.name}} || age : {{student.age}} || marks : {{student.marks}}</p> <a href="{% url 'deleteStudent' student.id %}">delete</a>   <a href="{% url 'updateStudent' student.id %}">update</a><br>
+
+    {% endfor %}
+    {% else %}
+
+    <p>no data</p>
+
+    {% endif %}
+    <a href="{% url 'createStudent'%}">Add Student</a>
+</body>
+</html>

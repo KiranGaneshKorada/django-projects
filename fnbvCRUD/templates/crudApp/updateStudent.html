@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>update form</h1>
+    <form  method="post">
+
+        {% csrf_token %}
+<!--
+    THIS IS FOR BRUTE FORCE APPROACH
+    name : <input type="text" name="name" value="{{student.name}}"><br>
+         age : <input type="text" name="age" value="{{student.age}}"><br>
+         marks : <input type="text" name="marks" value="{{student.marks}}"><br>
+-->
+
+        {{data_form.as_p}}
+         
+
+        <input type="submit"  value="update">
+
+    </form>
+
+</body>
+</html>

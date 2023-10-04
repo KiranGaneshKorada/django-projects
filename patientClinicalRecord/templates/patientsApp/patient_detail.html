@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {{patient.name}}  
+        {{patient.age}} 
+        {{patient.gender}} 
+        
+        <hr>
+
+        {% if record %}
+         height={{record.height}} <br>
+         weight={{record.weight}} <br>
+         bloodPressure={{record.bloodPressure}} <br>
+         heartRate={{record.heartRate}} <br>
+         <a href="{% url 'updatePatientClinicalData' record.id %}">edit</a> ||
+         <a href="{% url 'deletePatientClinicalData' record.id %}">delete</a> <br>
+        {%else%}
+        No clinical data found <a href="{%url 'addpatientclinicaldata' patient.id %}">Add Clinical data</a>
+        {%endif%}
+        <a href="{%url 'patientList' %}">Patients list</a>
+    </div>
+</body>
+</html>
